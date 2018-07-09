@@ -3,6 +3,7 @@ A fluX version to work with Maximilian DSP library.
 
 Example:
 
+```cpp
 maxiOsc panSine;
 maxiFractionalDelay delay;
 maxiMix mixOut;
@@ -55,3 +56,4 @@ void play(double *output) {
   output[0] = in + in_delay;
   output[1] = in + in_delay;
 }
+```
