@@ -6,7 +6,11 @@
 //
 //
 
+#include "maximilian.h"
+#include "note.h"
 #include "sequencer.h"
+#include "generator.h"
+#include "synth.h"
 
 maxiOsc Seq::_tick;
 float Seq::_tempo;
@@ -55,6 +59,5 @@ double Seq::output() {
     _note = _gen.note();
     lastCount = counter;
   }
-  
-  return synth.output(_note.note);
+  return synth.output(_note);
 }

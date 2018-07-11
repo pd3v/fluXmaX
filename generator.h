@@ -9,28 +9,20 @@
 #ifndef generator_h
 #define generator_h
 
-#include <stdio.h>
 #include <vector>
 #include <functional>
 
-using namespace std;
-
-struct note_t {
-  double note;
-  int dur;
-  int vel;
-  int oct;
-};
+class note_t;
 
 class Gen {
-  static vector<int>_scale;
-  static function<vector<int>(void)> _f;
+  static std::vector<int>_scale;
+  static std::function<std::vector<int>(void)> _f;
   
 public:
-  static Gen& instance(vector<int> scale, function<vector<int>(void)> f);
+  static Gen& instance(std::vector<int> scale, std::function<std::vector<int>(void)> f);
   static double midi_to_freq(double midiNote);
+  static double midi_to_amp(double midiNote);
   static note_t note();
 };
-
 
 #endif /* generator_h */

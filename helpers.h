@@ -9,8 +9,6 @@
 #ifndef helpers_hpp
 #define helpers_hpp
 
-#include <stdio.h>
-
 namespace hlp {
   float rand(float min, float max);
   float midi_to_amp(int value);

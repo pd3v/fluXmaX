@@ -9,21 +9,18 @@
 #ifndef sequencer_h
 #define sequencer_h
 
-#include <stdio.h>
-#include <vector>
-#include <functional>
-#include "generator.h"
-#include "synth.h"
-
-using namespace std;
+class maxiOsc;
+class note_t;
+class Gen;
+class Synth;
 
 class Seq {
   static maxiOsc _tick;
   static float _tempo;
   static int _pattern;
-  static vector<int> _scale;
+  static std::vector<int> _scale;
   static note_t _note;
-  static function<vector<int>(void)> _f;
+  static std::function<std::vector<int>(void)> _f;
   static Gen _gen;
   
 public:
@@ -34,7 +31,7 @@ public:
   
   static Seq& instance();
   static Seq& start(float tempo, float pattern);
-  static Seq& gen(vector<int> scale, std::function<vector<int>(void)> f);
+  static Seq& gen(std::vector<int> scale, std::function<std::vector<int>(void)> f);
   static Seq& synthOut();
   static double output();
   
