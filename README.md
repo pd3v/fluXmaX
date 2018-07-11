@@ -4,12 +4,24 @@ A fluX version to work with Maximilian DSP library.
 Example:
 
 ```cpp
+#include <vector>
+#include <functional>
+#include <math.h>
+#include <cstdlib>
+#include "maximilian.h"
+#include "sequencer.h"
+#include "generator.h"
+#include "synth.h"
+#include "helpers.h"
+
+using namespace hlp;
+
 maxiOsc panSine;
 maxiFractionalDelay delay;
 maxiMix mixOut;
 
 double stereoOutput[2];
-int mod, pan, dur = 0.0;
+int pan;
 
 // maximilian's setup()
 void setup(int args, char* argv[]) {
@@ -22,9 +34,8 @@ void setup(int args, char* argv[]) {
     static int inc = 1, oct = 2;
 
     if (Seq::playHead%scale.size() == 0) {
-      int d = (int)rand(1,4); // rand() helper function
       oct += inc;
-      pan = pow(2,d+1);
+      pan = pow(2,(int)rand(1,4)+1); // rand() helper function
     }
 
     if (Seq::playHead%150 == 0) {
