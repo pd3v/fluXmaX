@@ -10,8 +10,6 @@ Example:
 #include <cstdlib>
 #include "maximilian.h"
 #include "sequencer.h"
-#include "generator.h"
-#include "synth.h"
 #include "helpers.h"
 
 using namespace hlp;
