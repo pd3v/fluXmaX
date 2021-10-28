@@ -1,4 +1,4 @@
-# fluX_for_maximilian
+# fluXMax
 A fluX version to work with Maximilian DSP library.
 
 Example:
